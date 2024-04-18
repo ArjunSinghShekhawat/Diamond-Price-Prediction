@@ -1,7 +1,13 @@
-from setuptools import find_packages,setup
+from setuptools import setup,find_packages #Automatically find all packages in your project
 from typing import List
 
+AUTHOR_NAME = 'Arjun Singh'
+AUTHOR_EMAIL = 'shekhawatsingharjun12345@gmail.com'
+DESCRIPTION = 'Diamond Price Prediction Project'
+VERSION = '0.0.1'
+NAME = 'DiamondPricePrediction'
 HYPEN_E_DOT = '-e .'
+
 
 def get_requirements(file_path:str)->List[str]:
     requirements = []
@@ -15,14 +21,14 @@ def get_requirements(file_path:str)->List[str]:
 
         return requirements
 
-    
-
 setup(
-    name='DiamondPricePrediction',
-    version='0.0.1',
-    author='ArjunSingh',
-    author_email='shekhawatsingharjun12345@gmail.com',
-    install_requires = get_requirements('requirements.txt'),
-    packages=find_packages()
-
+    name=NAME,
+    author=AUTHOR_NAME,
+    author_email=AUTHOR_EMAIL,
+    description=DESCRIPTION,
+    version=VERSION,
+    packages=find_packages(),
+    install_requires = get_requirements('requirements.txt')
 )
+
+
